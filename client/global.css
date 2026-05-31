@@ -1,0 +1,149 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Wellness AI Color System
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+  */
+  :root {
+    /* Backgrounds */
+    --background: 35 40% 96%;
+    --foreground: 30 20% 20%;
+
+    /* Cards & UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 30 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 20% 20%;
+
+    /* Primary - Sage Green */
+    --primary: 117 18% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Dusty Lavender */
+    --secondary: 270 30% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent - Warm Peach */
+    --accent: 15 85% 65%;
+    --accent-foreground: 30 20% 20%;
+
+    /* Muted */
+    --muted: 35 30% 85%;
+    --muted-foreground: 30 10% 45%;
+
+    /* Soft Sky Blue */
+    --sky-blue: 200 70% 70%;
+
+    /* Muted Pink */
+    --muted-pink: 0 60% 80%;
+
+    /* Border & Input */
+    --border: 35 25% 90%;
+    --input: 0 0% 100%;
+    --ring: 117 18% 48%;
+
+    /* Radius */
+    --radius: 1.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 35 40% 96%;
+    --sidebar-foreground: 30 20% 20%;
+    --sidebar-primary: 117 18% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 15 85% 65%;
+    --sidebar-accent-foreground: 30 20% 20%;
+    --sidebar-border: 35 25% 90%;
+    --sidebar-ring: 117 18% 48%;
+  }
+
+  .dark {
+    /* In light-only design, dark mode mirrors light */
+    --background: 35 40% 96%;
+    --foreground: 30 20% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 20% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 20% 20%;
+    --primary: 117 18% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 30% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 15 85% 65%;
+    --accent-foreground: 30 20% 20%;
+    --muted: 35 30% 85%;
+    --muted-foreground: 30 10% 45%;
+    --border: 35 25% 90%;
+    --input: 0 0% 100%;
+    --ring: 117 18% 48%;
+    --sidebar-background: 35 40% 96%;
+    --sidebar-foreground: 30 20% 20%;
+    --sidebar-primary: 117 18% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 15 85% 65%;
+    --sidebar-accent-foreground: 30 20% 20%;
+    --sidebar-border: 35 25% 90%;
+    --sidebar-ring: 117 18% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .wellness-card {
+    @apply rounded-3xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .wellness-card-lg {
+    @apply rounded-3xl bg-white p-8 shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .gradient-warm {
+    @apply bg-gradient-to-br from-yellow-100 via-orange-50 to-pink-100;
+  }
+
+  .gradient-sage {
+    @apply bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100;
+  }
+
+  .text-heading-lg {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  .text-heading-md {
+    @apply text-2xl font-bold;
+  }
+
+  .text-heading-sm {
+    @apply text-lg font-semibold;
+  }
+}
